@@ -34,7 +34,17 @@ src/app/
    ├─ modalities/            # Detalhes das modalidades
    ├─ schedule/              # Grade semanal de horários
    └─ contact/               # Contato, mapa e formulário (WhatsApp)
+
+public/
+├─ favicon.ico
+└─ assets/                   # Imagens servidas em /assets/* (copiadas no build)
+   ├─ logo/                  # Logos da marca — /assets/logo/*
+   └─ fotos/                 # Fotos de treinos e aulas — /assets/fotos/*
 ```
+
+> Imagens ficam em `public/assets/`, organizadas por categoria (`logo/`, `fotos/`).
+> A pasta `Images/` na raiz **não funciona**: o Angular só serve arquivos que estão em `public/`.
+> Referencie como `/assets/logo/fp-logo-black.jpg`, etc.
 
 ## Comandos
 
