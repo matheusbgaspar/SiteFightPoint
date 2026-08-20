@@ -145,17 +145,13 @@ a {
   background: rgba(255, 244, 117, 0.6);
 }
 
+/* Oculta a barra de rolagem em todo o site, mantendo a rolagem funcional */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE / Edge */
+}
+
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f0ef;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #c9c7c4;
-  border-radius: 5px;
+  display: none; /* Chrome / Safari / Opera */
 }
 
