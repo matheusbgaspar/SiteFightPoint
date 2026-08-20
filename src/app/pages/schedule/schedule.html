@@ -1,0 +1,77 @@
+<section class="page-hero">
+  <span class="section-kicker">PLANEJE SEU TREINO</span>
+  <h1>Horários das aulas</h1>
+  <p>Consulte a grade por dia da semana ou por modalidade.</p>
+</section>
+
+<section class="section">
+  <mat-button-toggle-group class="view-toggle" [(ngModel)]="view" aria-label="Formato da grade">
+    <mat-button-toggle value="day">Por dia</mat-button-toggle>
+    <mat-button-toggle value="modality">Por modalidade</mat-button-toggle>
+  </mat-button-toggle-group>
+
+  @if (view === 'day') {
+    <mat-tab-group class="schedule-tabs" [mat-stretch-tabs]="false" animationDuration="200ms">
+      @for (day of days; track day.key) {
+        <mat-tab [label]="day.label">
+          <div class="day-list">
+            @for (cls of classesFor(day.key); track $index) {
+              <div class="class-row">
+                <div class="class-time">{{ cls.time }}</div>
+                <span class="class-dot" [class]="modClass(cls.modalityId)"></span>
+                <div class="class-info">
+                  <span class="class-name">{{ cls.modality }}</span>
+                  @if (cls.info) {
+                    <span class="class-note">{{ cls.info }}</span>
+                  }
+                </div>
+              </div>
+            }
+            @empty {
+              <p class="empty-day">Sem aulas neste dia.</p>
+            }
+          </div>
+        </mat-tab>
+      }
+    </mat-tab-group>
+  } @else {
+    <div class="modality-grid">
+      @for (mod of modalities; track mod.id) {
+        <div class="mod-card">
+          <div class="mod-head">
+            <span class="class-dot" [class]="modClass(mod.id)"></span>
+            <h3>{{ mod.name }}</h3>
+          </div>
+          <ul class="mod-times">
+            @for (slot of slotsFor(mod.id); track $index) {
+              <li>
+                <span class="mod-day">{{ dayLabel(slot.dayKey) }}</span>
+                <span class="mod-time">{{ slot.time }}</span>
+                @if (slot.info) {
+                  <span class="mod-note">{{ slot.info }}</span>
+                }
+              </li>
+            }
+            @empty {
+              <li class="empty">Sem aulas nesta modalidade.</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  }
+
+  <div class="legend">
+    <span class="legend-item"><span class="dot mod-karate"></span> Karatê</span>
+    <span class="legend-item"><span class="dot mod-muay-thai"></span> Muay Thai</span>
+    <span class="legend-item"><span class="dot mod-jiu-jitsu"></span> Jiu-Jitsu</span>
+    <span class="legend-item"><span class="dot mod-boxe"></span> Boxe</span>
+    <span class="legend-item"><span class="dot mod-mma"></span> MMA</span>
+  </div>
+
+  <p class="note">
+    <mat-icon>info</mat-icon>
+    Horários sujeitos a alteração. Entre em contato para confirmar as turmas e agendar uma aula
+    experimental.
+  </p>
+</section>

@@ -1,0 +1,128 @@
+<section class="page-hero">
+  <p class="section-kicker">FALE COM A GENTE</p>
+  <h1>Contato</h1>
+  <p>Visite a academia, chame no WhatsApp ou acompanhe a gente no Instagram.</p>
+</section>
+
+<section class="section">
+  <div class="contact-grid">
+    <div class="info-col">
+      <div class="info-card">
+        <mat-icon>place</mat-icon>
+        <div>
+          <h3>Endereço</h3>
+          <p>{{ contact.address }}</p>
+          <p class="muted">{{ contact.addressDetail }}</p>
+          <a
+            mat-button
+            color="primary"
+            [href]="contact.googleMapsUrl"
+            target="_blank"
+            rel="noopener"
+          >
+            Ver no Google Maps
+          </a>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <mat-icon>instagram</mat-icon>
+        <div>
+          <h3>Instagram</h3>
+          <p>Siga e acompanhe as novidades da academia.</p>
+          <a
+            mat-button
+            color="primary"
+            [href]="contact.instagramUrl"
+            target="_blank"
+            rel="noopener"
+          >
+            {{ contact.instagramHandle }}
+          </a>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <mat-icon>smartphone</mat-icon>
+        <div>
+          <h3>WhatsApp</h3>
+          <p>{{ contact.whatsapp }}</p>
+          <a
+            mat-button
+            color="primary"
+            [href]="contact.whatsappUrl"
+            target="_blank"
+            rel="noopener"
+          >
+            Chamar no WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <mat-icon>email</mat-icon>
+        <div>
+          <h3>E-mail</h3>
+          <p>{{ contact.email }}</p>
+        </div>
+      </div>
+
+      <div class="map-wrap">
+        <iframe
+          class="map-frame"
+          title="Mapa – Fight Point"
+          [src]="mapSrc"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="form-col">
+      <mat-card class="form-card" appearance="outlined">
+        <h2>Agende uma aula experimental</h2>
+        <p>Preencha os campos abaixo e fale com a gente pelo WhatsApp.</p>
+
+        <form #contactForm="ngForm" (ngSubmit)="openWhatsApp()">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Seu nome</mat-label>
+            <input matInput name="name" [(ngModel)]="name" required />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>WhatsApp</mat-label>
+            <span matTextPrefix>+55 &nbsp;</span>
+            <input matInput name="phone" [(ngModel)]="phone" placeholder="(11) 90000-0000" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Mensagem</mat-label>
+            <textarea
+              matInput
+              name="message"
+              [(ngModel)]="message"
+              rows="4"
+              placeholder="Qual modalidade você quer conhecer?"
+            ></textarea>
+          </mat-form-field>
+
+          <button
+            mat-flat-button
+            color="primary"
+            type="submit"
+            class="full-width"
+            [disabled]="!contactForm.valid"
+          >
+            <mat-icon>chat</mat-icon>
+            Enviar pelo WhatsApp
+          </button>
+        </form>
+
+        @if (sent) {
+          <p class="sent-note">Abrimos o WhatsApp para você concluir o envio. Até breve! 💪</p>
+        }
+      </mat-card>
+    </div>
+  </div>
+</section>

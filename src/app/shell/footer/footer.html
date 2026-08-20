@@ -1,0 +1,54 @@
+<footer class="app-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="brand">
+        <mat-icon class="brand-icon">sports_martial_arts</mat-icon>
+        <span class="brand-name">FIGHT <span class="brand-accent">POINT</span></span>
+      </div>
+      <p>
+        Academia de artes marciais no Jardim Santo Elias, São Paulo. Karatê, Muay Thai,
+        Jiu-Jitsu, Boxe e MMA.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul>
+        @for (item of navItems; track item.path) {
+          <li>
+            <a [routerLink]="item.path">{{ item.label }}</a>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <ul class="contact-list">
+        <li>
+          <mat-icon>place</mat-icon>
+          <span>{{ contact.address }}</span>
+        </li>
+        <li>
+          <a [href]="contact.instagramUrl" target="_blank" rel="noopener">
+            <mat-icon>instagram</mat-icon>
+            <span>{{ contact.instagramHandle }}</span>
+          </a>
+        </li>
+        <li>
+          <mat-icon>smartphone</mat-icon>
+          <span>{{ contact.whatsapp }}</span>
+        </li>
+        <li>
+          <mat-icon>email</mat-icon>
+          <span>{{ contact.email }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© {{ year }} Fight Point. Todos os direitos reservados.</span>
+    <span>Academia do Shihan Iuri Messias</span>
+  </div>
+</footer>

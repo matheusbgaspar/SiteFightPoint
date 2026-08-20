@@ -1,0 +1,105 @@
+.app-footer {
+  margin-top: auto;
+  padding: 48px 24px 24px;
+  background: var(--fp-ink);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.72);
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    .brand-icon {
+      color: var(--fp-yellow);
+    }
+
+    .brand-name {
+      font-family: 'Oswald', 'Impact', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #fff;
+    }
+
+    .brand-accent {
+      color: var(--fp-yellow);
+    }
+  }
+
+  p {
+    max-width: 360px;
+    margin: 12px 0 0;
+    line-height: 1.6;
+  }
+
+  h4 {
+    margin: 0 0 12px;
+    color: #fff;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.72);
+    text-decoration: none;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    mat-icon {
+      font-size: 18px;
+      width: 18px;
+      height: 18px;
+      color: var(--fp-yellow);
+    }
+  }
+
+  .footer-bottom {
+    max-width: 1120px;
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 720px) {
+  .app-footer {
+    .footer-grid {
+      grid-template-columns: 1.4fr 1fr 1fr;
+    }
+  }
+}

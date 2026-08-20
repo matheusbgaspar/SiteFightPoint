@@ -1,0 +1,49 @@
+.app-shell {
+  height: 100%;
+}
+
+.app-drawer {
+  width: 280px;
+  padding: 20px 16px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+
+  .drawer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 8px;
+  }
+
+  .drawer-cta {
+    margin-top: auto;
+    width: 100%;
+  }
+
+  .drawer-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--fp-ink-soft);
+    font-size: 1rem;
+    font-weight: 500;
+
+    &.active {
+      color: var(--fp-ink);
+      background: var(--fp-cream);
+    }
+
+    &:hover {
+      background: rgba(41, 37, 36, 0.06);
+    }
+  }
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 64px);
+}

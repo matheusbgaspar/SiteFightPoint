@@ -1,0 +1,71 @@
+<section class="page-hero">
+  <p class="section-kicker">NOSSA HISTÓRIA</p>
+  <h1>Sobre a Fight Point</h1>
+  <p>Uma academia de artes marciais no coração do Jardim Santo Elias, em São Paulo.</p>
+</section>
+
+<section class="section split-section">
+  <div class="split-media">
+    <app-photo label="Foto: a academia" icon="fitness_center" />
+  </div>
+  <div class="split-text">
+    <p class="section-kicker">QUEM SOMOS</p>
+    <h2>Quem somos</h2>
+    <p>
+      A <strong>Fight Point</strong> é uma academia de lutas localizada no Jardim Santo Elias,
+      zona sul de São Paulo. Oferecemos treinos de <strong>Karatê, Muay Thai, Jiu-Jitsu, Boxe e
+      MMA</strong> para todas as idades e níveis — do primeiro treino ao alto rendimento.
+    </p>
+    <p>
+      Nosso objetivo é proporcionar um ambiente acolhedor e estruturado, onde cada aluno evolui
+      com segurança, respeito e disciplina, independentemente do objetivo: defesa pessoal,
+      condicionamento físico, competição ou qualidade de vida.
+    </p>
+  </div>
+</section>
+
+<section class="section split-section reverse">
+  <div class="split-media">
+    <app-photo label="Foto: Shihan Iuri Messias" icon="person" />
+  </div>
+  <div class="split-text">
+    <p class="section-kicker">RESPONSÁVEL TÉCNICO</p>
+    <h2>Shihan Iuri Messias</h2>
+    <p>
+      A academia é comandada pelo <strong>Shihan Iuri Messias</strong>, responsável técnico e
+      referência na formação de lutadores e praticantes de artes marciais na região.
+    </p>
+    <p>
+      Com uma trajetória dedicada às artes marciais, o Shihan Iuri Messias conduz os treinos com
+      foco em técnica, disciplina e no desenvolvimento pessoal de cada aluno.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div>
+      <p class="section-kicker">NOSSOS VALORES</p>
+      <h2>O que guia o nosso treino</h2>
+    </div>
+  </div>
+
+  <div class="values-grid">
+    @for (value of values; track value.title) {
+      <div class="value-card">
+        <mat-icon>{{ value.icon }}</mat-icon>
+        <h3>{{ value.title }}</h3>
+        <p>{{ value.text }}</p>
+      </div>
+    }
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>Vem treinar com a gente!</h2>
+  <p>Agende uma aula experimental e conheça a Fight Point de perto.</p>
+  <div class="cta-actions">
+    <a mat-flat-button color="primary" routerLink="/modalidades">Ver modalidades</a>
+    <a mat-stroked-button class="cta-outline" routerLink="/contato">Fale conosco</a>
+  </div>
+</section>

@@ -1,0 +1,99 @@
+<!-- ===== HERO (escuro) ===== -->
+<section class="hero">
+  <app-photo class="hero-bg" [framed]="false" label="Foto: treino na academia" icon="sports_martial_arts" />
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <p class="hero-kicker">ACADEMIA DE ARTES MARCIAIS</p>
+    <h1 class="hero-title">FIGHT <span>POINT</span></h1>
+    <p class="hero-subtitle">
+      Karatê • Muay Thai • Jiu-Jitsu • Boxe • MMA<br />
+      Jardim Santo Elias, São Paulo – SP
+    </p>
+    <div class="hero-actions">
+      <a mat-flat-button class="hero-btn" routerLink="/modalidades">Conheça as modalidades</a>
+      <a mat-stroked-button class="hero-btn-outline" routerLink="/contato">Fale conosco</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTRO (claro) ===== -->
+<section class="section intro-section">
+  <div class="section-head-center">
+    <span class="section-kicker">MAIS QUE UMA ACADEMIA, UM CAMINHO</span>
+    <h2>Treine com quem vive a luta</h2>
+    <p>
+      A Fight Point é uma academia de lutas localizada no Jardim Santo Elias, em São Paulo,
+      comandada pelo Shihan Iuri Messias. Aqui você encontra estrutura para evoluir em qualquer
+      arte marcial, do iniciante ao competidor.
+    </p>
+    <a mat-flat-button color="primary" routerLink="/sobre" class="intro-btn">
+      Conheça a nossa história
+    </a>
+  </div>
+</section>
+
+<!-- ===== CURSOS (escuro) ===== -->
+<section class="courses-section">
+  <div class="courses-inner">
+    <div class="section-head-center on-dark">
+      <span class="section-kicker">ENCONTRE SUA LUTA</span>
+      <h2>Modalidades</h2>
+    </div>
+
+    <div class="course-grid">
+      @for (mod of modalities; track mod.id) {
+        <mat-card class="course-card" appearance="outlined">
+          <app-photo class="course-photo" [framed]="false" [label]="'Foto: ' + mod.name" [icon]="mod.icon" />
+          <div class="course-body">
+            <h3>{{ mod.name }}</h3>
+            <p>{{ mod.tagline }}</p>
+          </div>
+        </mat-card>
+      }
+    </div>
+
+    <div class="courses-more">
+      <a mat-stroked-button class="on-dark-btn" routerLink="/modalidades">
+        Ver todas as modalidades
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INSTRUTOR (claro) ===== -->
+<section class="section instructor-section">
+  <div class="instructor-media">
+    <app-photo label="Foto: Shihan Iuri Messias" icon="person" />
+  </div>
+  <div class="instructor-text">
+    <span class="section-kicker">RESPONSÁVEL TÉCNICO</span>
+    <h2>Shihan Iuri Messias</h2>
+    <p>
+      Conduz os treinos da Fight Point com foco em técnica, disciplina e no desenvolvimento
+      pessoal de cada aluno.
+    </p>
+    <a mat-stroked-button routerLink="/sobre">Nossa filosofia</a>
+  </div>
+</section>
+
+<!-- ===== CTA (escuro) ===== -->
+<section class="cta-band">
+  <span class="cta-kicker">PRONTO PARA COMEÇAR SUA JORNADA?</span>
+  <h2>Agende uma aula experimental</h2>
+  <p>Venha conhecer a Fight Point de perto e comece a treinar.</p>
+  <a mat-flat-button class="cta-btn" routerLink="/contato">Fale conosco</a>
+</section>
+
+<!-- ===== MARQUEE (amarelo) ===== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    @for (group of [0, 1]; track group) {
+      <div class="marquee-group">
+        @for (item of marqueeItems; track item) {
+          <span class="marquee-item">{{ item }} <span class="sep">✦</span></span>
+        }
+      </div>
+    }
+  </div>
+</div>

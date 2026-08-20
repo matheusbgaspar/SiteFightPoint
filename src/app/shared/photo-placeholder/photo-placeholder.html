@@ -1,0 +1,14 @@
+@if (src()) {
+  <img class="photo-img" [src]="src()" [alt]="label()" loading="lazy" />
+} @else {
+  <div
+    class="photo-ph"
+    [class.unframed]="!framed()"
+    role="img"
+    [attr.aria-label]="'Foto: ' + label()"
+  >
+    <mat-icon>{{ icon() }}</mat-icon>
+    <span class="ph-label">{{ label() }}</span>
+    <span class="ph-hint">Foto a ser enviada</span>
+  </div>
+}

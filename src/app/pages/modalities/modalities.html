@@ -1,0 +1,36 @@
+<section class="page-hero">
+  <p class="section-kicker">TREINOS PARA TODOS OS NÍVEIS</p>
+  <h1>Modalidades</h1>
+  <p>
+    Karatê, Muay Thai, Jiu-Jitsu, Boxe e MMA. Escolha a sua luta e comece a treinar.
+  </p>
+</section>
+
+<section class="section">
+  <div class="modality-grid">
+    @for (mod of modalities; track mod.id) {
+      <article class="modality-card">
+        <app-photo class="mod-photo" [framed]="false" [label]="'Foto: ' + mod.name" [icon]="mod.icon" />
+        <div class="mod-body">
+          <div class="mod-title">
+            <div class="mod-icon">
+              <mat-icon>{{ mod.icon }}</mat-icon>
+            </div>
+            <h2>{{ mod.name }}</h2>
+          </div>
+          <p class="tagline">{{ mod.tagline }}</p>
+          <p class="description">{{ mod.description }}</p>
+          <mat-chip-set aria-label="Benefícios da modalidade">
+            @for (benefit of mod.benefits; track benefit) {
+              <mat-chip>{{ benefit }}</mat-chip>
+            }
+          </mat-chip-set>
+          <div class="mod-actions">
+            <a mat-stroked-button color="primary" routerLink="/horarios">Ver horários</a>
+            <a mat-flat-button color="primary" routerLink="/contato">Agendar aula</a>
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</section>

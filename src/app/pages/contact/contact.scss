@@ -1,0 +1,133 @@
+.page-hero {
+  text-align: center;
+  padding: 80px 24px 48px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(229, 57, 53, 0.18), transparent 60%),
+    linear-gradient(180deg, #0f0f10 0%, #131316 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+  h1 {
+    margin: 0 0 12px;
+    font-family: 'Rajdhani', 'Roboto', sans-serif;
+    font-size: clamp(2.4rem, 7vw, 3.6rem);
+    font-weight: 700;
+  }
+
+  p {
+    max-width: 620px;
+    margin: 0 auto;
+    color: var(--fp-text-muted);
+    line-height: 1.7;
+  }
+
+  .section-kicker {
+    margin-bottom: 12px;
+    color: var(--fp-red);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+  }
+}
+
+.section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 56px 24px 88px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .info-card {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px;
+    border-radius: 8px;
+    background: var(--fp-paper);
+    border: 1px solid var(--fp-line);
+
+    > mat-icon {
+      color: var(--fp-blue);
+      margin-top: 4px;
+    }
+
+    h3 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+    }
+
+    p {
+      margin: 0 0 8px;
+      color: var(--fp-ink);
+      line-height: 1.6;
+
+      &.muted {
+        color: var(--fp-ink-soft);
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .map-wrap {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--fp-line);
+    line-height: 0;
+
+    .map-frame {
+      width: 100%;
+      height: 320px;
+      border: 0;
+    }
+  }
+}
+
+.form-col {
+  .form-card {
+    padding: 28px;
+    background: var(--fp-paper);
+    border-color: var(--fp-line);
+
+    h2 {
+      margin: 0 0 8px;
+      font-family: 'Rajdhani', 'Roboto', sans-serif;
+      font-size: 1.6rem;
+    }
+
+    > p {
+      margin: 0 0 24px;
+      color: var(--fp-ink-soft);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .full-width {
+      width: 100%;
+    }
+
+    .sent-note {
+      margin: 16px 0 0;
+      color: #1b873b;
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .contact-grid {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: start;
+  }
+}

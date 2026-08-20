@@ -1,0 +1,33 @@
+<mat-toolbar class="app-header">
+  <a class="brand" routerLink="/" aria-label="Fight Point – Início">
+    <mat-icon class="brand-icon">sports_martial_arts</mat-icon>
+    <span class="brand-name">FIGHT <span class="brand-accent">POINT</span></span>
+  </a>
+
+  <nav class="desktop-nav" aria-label="Navegação principal">
+    @for (item of navItems; track item.path) {
+      <a
+        mat-button
+        class="nav-link"
+        [routerLink]="item.path"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
+      >
+        {{ item.label }}
+      </a>
+    }
+  </nav>
+
+  <a mat-flat-button class="header-cta cta-ink" routerLink="/contato">
+    Agende uma aula
+  </a>
+
+  <button
+    mat-icon-button
+    class="mobile-menu"
+    (click)="menuClick.emit()"
+    aria-label="Abrir menu de navegação"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>

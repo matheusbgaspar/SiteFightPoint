@@ -1,0 +1,336 @@
+.page-hero {
+  text-align: center;
+  padding: 80px 24px 48px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(229, 57, 53, 0.18), transparent 60%),
+    linear-gradient(180deg, #0f0f10 0%, #131316 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+  h1 {
+    margin: 0 0 12px;
+    font-family: 'Rajdhani', 'Roboto', sans-serif;
+    font-size: clamp(2.4rem, 7vw, 3.6rem);
+    font-weight: 700;
+  }
+
+  p {
+    max-width: 620px;
+    margin: 0 auto;
+    color: var(--fp-text-muted);
+    line-height: 1.7;
+  }
+
+  .section-kicker {
+    margin-bottom: 12px;
+    color: var(--fp-red);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+  }
+}
+
+.section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 56px 24px 88px;
+}
+
+.schedule-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--fp-line);
+  border-radius: 8px;
+  background: var(--fp-paper);
+}
+
+.schedule-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 820px;
+
+  th,
+  td {
+    padding: 14px 10px;
+    text-align: center;
+    border-bottom: 1px solid var(--fp-line);
+  }
+
+  thead th {
+    background: var(--fp-cream);
+    color: var(--fp-ink);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    position: sticky;
+    top: 0;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .time-col {
+    width: 96px;
+    color: var(--fp-ink-soft);
+    font-weight: 500;
+    white-space: nowrap;
+    background: #f4f3f2;
+  }
+
+  .class-chip {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #fff;
+
+    small {
+      font-weight: 400;
+      opacity: 0.85;
+      font-size: 0.72rem;
+    }
+  }
+}
+
+/* ===== Seletor de visão ===== */
+.view-toggle {
+  display: flex;
+  margin: 0 auto 32px;
+  width: fit-content;
+  border: 1px solid var(--fp-line);
+  border-radius: 8px;
+  overflow: hidden;
+
+  ::ng-deep .mat-button-toggle {
+    background: var(--fp-paper);
+    color: var(--fp-ink-soft);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem;
+
+    &.mat-button-toggle-checked {
+      background: var(--fp-ink);
+      color: #fff;
+    }
+  }
+}
+
+/* ===== Abas por dia ===== */
+.schedule-tabs {
+  background: var(--fp-paper);
+  border: 1px solid var(--fp-line);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 24px;
+
+  ::ng-deep .mdc-tab {
+    min-width: 112px;
+  }
+
+  ::ng-deep .mdc-tab__text-label {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.9rem;
+  }
+}
+
+.day-list {
+  padding: 8px 16px 16px;
+}
+
+.class-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 8px;
+  border-bottom: 1px solid var(--fp-line);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .class-time {
+    min-width: 72px;
+    font-family: 'Oswald', 'Impact', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--fp-ink);
+  }
+
+  .class-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .class-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    .class-name {
+      font-weight: 700;
+      color: var(--fp-ink);
+      font-size: 1.05rem;
+    }
+
+    .class-note {
+      font-size: 0.82rem;
+      color: var(--fp-ink-soft);
+    }
+  }
+}
+
+.empty-day {
+  text-align: center;
+  color: var(--fp-ink-soft);
+  padding: 32px 0;
+}
+
+/* ===== Grade por modalidade ===== */
+.modality-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.mod-card {
+  background: var(--fp-paper);
+  border: 1px solid var(--fp-line);
+  border-radius: 8px;
+  padding: 20px;
+
+  .mod-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+
+    .class-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+  }
+
+  .mod-times {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      background: var(--fp-cream);
+      border-radius: 6px;
+      font-size: 0.92rem;
+
+      .mod-day {
+        color: var(--fp-ink-soft);
+        font-weight: 500;
+      }
+
+      .mod-time {
+        font-weight: 700;
+        color: var(--fp-ink);
+      }
+
+      .mod-note {
+        margin-left: auto;
+        font-size: 0.78rem;
+        color: var(--fp-ink-soft);
+      }
+    }
+
+    .empty {
+      justify-content: center;
+      color: var(--fp-ink-soft);
+    }
+  }
+}
+
+/* ===== Cores por modalidade ===== */
+.mod-karate {
+  background: rgba(229, 57, 53, 0.9);
+}
+
+.mod-muay-thai {
+  background: rgba(255, 87, 34, 0.9);
+}
+
+.mod-jiu-jitsu {
+  background: rgba(33, 150, 243, 0.9);
+}
+
+.mod-boxe {
+  background: rgba(255, 193, 7, 0.95);
+}
+
+.mod-mma {
+  background: rgba(156, 39, 176, 0.9);
+}
+
+/* ===== Legenda e nota ===== */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 0 0 16px;
+
+  .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--fp-ink-soft);
+    font-size: 0.85rem;
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--fp-ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.6;
+
+  mat-icon {
+    color: var(--fp-blue);
+    flex-shrink: 0;
+  }
+}
+
+@media (min-width: 720px) {
+  .modality-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .modality-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

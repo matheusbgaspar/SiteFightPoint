@@ -1,0 +1,28 @@
+<mat-sidenav-container class="app-shell">
+  <mat-sidenav #drawer mode="over" position="end" class="app-drawer">
+    <nav class="drawer-nav" aria-label="Navegação">
+      @for (item of navItems; track item.path) {
+        <a
+          class="drawer-link"
+          [routerLink]="item.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
+          (click)="drawer.close()"
+        >
+          {{ item.label }}
+        </a>
+      }
+    </nav>
+    <a mat-flat-button color="primary" class="drawer-cta" routerLink="/contato" (click)="drawer.close()">
+      Agende uma aula
+    </a>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-header (menuClick)="drawer.open()"></app-header>
+    <main class="app-main">
+      <router-outlet />
+    </main>
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>
