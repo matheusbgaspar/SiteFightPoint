@@ -45,10 +45,27 @@ src/app/
 | `npm run build`    | Build de produção em `dist/fight-point-site`     |
 | `npm test`         | Executa os testes unitários                      |
 
+## Publicação (GitHub Pages)
+
+O repositório já inclui o workflow `.github/workflows/deploy-pages.yml` que builda o site e
+publica em `https://matheusbgaspar.github.io/SiteFightPoint/`.
+
+Para ativar (uma vez só):
+
+1. **Visibilidade**: no plano gratuito do GitHub, Pages só funciona em repositório **público**.
+   Em `Settings > General > Danger Zone > Change repository visibility`, mude para `Public`
+   (ou use um plano pago Pro/Team para manter privado).
+2. **Fonte do Pages**: em `Settings > Pages > Build and deployment > Source`, selecione
+   `GitHub Actions`.
+3. Pronto — a cada push para `main`, o workflow faz o deploy automaticamente.
+   Também dá para rodar manualmente em `Actions > Deploy to GitHub Pages > Run workflow`.
+
+> ⚠️ `Repo.env` contém credenciais e é ignorado por `.gitignore` — **nunca** faça commit dele.
+> Se ele foi exposto em algum momento, gere um novo token em GitHub > Settings > Developer settings.
+
 ## Próximos passos
 
 - Substituir textos placeholder por informações reais (história, professores, horários).
 - Enviar fotos: usar o componente `<app-photo>` passando `[src]` (ex.: `/assets/fotos/karate.jpg`). Enquanto `src` estiver vazio, aparece um placeholder guiando onde a foto entra.
 - Aplicar a identidade visual final (logo, cores, fontes).
 - Preencher endereço completo, WhatsApp e e-mail reais.
-- Publicar o conteúdo de `dist/` em qualquer hospedagem estática (GitHub Pages, Netlify, Vercel etc.).
