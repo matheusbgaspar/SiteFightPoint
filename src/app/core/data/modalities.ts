@@ -41,13 +41,4 @@ export const MODALITIES: Modality[] = [
       'Golpes, esquivas e muita movimentação. O Boxe melhora reflexos, coordenação e condicionamento cardiovascular.',
     benefits: ['Reflexos', 'Coordenação', 'Condicionamento', 'Força'],
   },
-  {
-    id: 'mma',
-    name: 'MMA',
-    icon: 'local_fire_department',
-    tagline: 'Treino completo de luta.',
-    description:
-      'Treinamento que integra todas as artes marciais: striking, grappling e wrestling, para quem quer evoluir na luta completa.',
-    benefits: ['Luta completa', 'Resistência', 'Versatilidade', 'Superação'],
-  },
 ];
