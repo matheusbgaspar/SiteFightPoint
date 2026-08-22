@@ -15,5 +15,5 @@ import { PhotoPlaceholder } from '../../shared/photo-placeholder/photo-placehold
 export class Home {
   readonly modalities = MODALITIES;
 
-  readonly marqueeItems = ['Fight Point', 'Karatê', 'Muay Thai', 'Jiu-Jitsu', 'Boxe', 'MMA'];
+  readonly marqueeItems = ['Fight Point', 'Karatê', 'Muay Thai', 'Jiu-Jitsu', 'Boxe'];
 }
